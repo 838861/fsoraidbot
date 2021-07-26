@@ -1,0 +1,316 @@
+{
+  "Bosses": [
+    {
+      "Name": "Deathclaw",
+      "nickname": "デス",
+      "Race": "animals",
+      "Wave": 1,
+      "HP": 9726486,
+      "Level": 25
+    },
+    {
+      "Name": "Mirelurk",
+      "nickname": "カニ",
+      "Race": "animals",
+      "Wave": 1,
+      "HP": 13580144,
+      "Level": 28
+    },
+    {
+      "Name": "Sentry bot",
+      "nickname": "ロボ",
+      "Race": "synths",
+      "Wave": 1,
+      "HP": 24457707,
+      "Level": 31
+    },
+    {
+      "Name": "Deathclaw",
+      "nickname": "デス",
+      "Race": "animals",
+      "Wave": 2,
+      "HP": 41606124,
+      "Level": 35
+    },
+    {
+      "Name": "Mirelurk",
+      "nickname": "カニ",
+      "Race": "animals",
+      "Wave": 2,
+      "HP": 56766988,
+      "Level": 38
+    },
+    {
+      "Name": "Sentry bot",
+      "nickname": "ロボ",
+      "Race": "synths",
+      "Wave": 2,
+      "HP": 93324184,
+      "Level": 41
+    },
+    {
+      "Name": "Deathclaw",
+      "nickname": "デス",
+      "Race": "animals",
+      "Wave": 3,
+      "HP": 116007477,
+      "Level": 44
+    },
+    {
+      "Name": "Mirelurk",
+      "nickname": "カニ",
+      "Race": "animals",
+      "Wave": 3,
+      "HP": 147702048,
+      "Level": 47
+    },
+    {
+      "Name": "Sentry bot",
+      "nickname": "ロボ",
+      "Race": "synths",
+      "Wave": 3,
+      "HP": 207837463,
+      "Level": 50
+    },
+    {
+      "Name": "Deathclaw",
+      "nickname": "デス",
+      "Race": "animals",
+      "Wave": 4,
+      "HP": 252201628,
+      "Level": 53
+    },
+    {
+      "Name": "Mirelurk",
+      "nickname": "カニ",
+      "Race": "animals",
+      "Wave": 4,
+      "HP": 317134873,
+      "Level": 56
+    },
+    {
+      "Name": "Sentry bot",
+      "nickname": "ロボ",
+      "Race": "synths",
+      "Wave": 4,
+      "HP": 386174621,
+      "Level": 59
+    },
+    {
+      "Name": "Deathclaw",
+      "nickname": "デス",
+      "Race": "animals",
+      "Wave": 5,
+      "HP": 451161684,
+      "Level": 60
+    },
+    {
+      "Name": "Mirelurk",
+      "nickname": "カニ",
+      "Race": "animals",
+      "Wave": 5,
+      "HP": 451161684,
+      "Level": 60
+    },
+    {
+      "Name": "Sentry bot",
+      "nickname": "ロボ",
+      "Race": "synths",
+      "Wave": 5,
+      "HP": 451633344,
+      "Level": 60
+    },
+    {
+      "Name": "Deathclaw",
+      "nickname": "デス",
+      "Race": "animals",
+      "Wave": 6,
+      "HP": 476996597,
+      "Level": 61
+    },
+    {
+      "Name": "Mirelurk",
+      "nickname": "カニ",
+      "Race": "animals",
+      "Wave": 6,
+      "HP": 476996597,
+      "Level": 61
+    },
+    {
+      "Name": "Sentry bot",
+      "nickname": "ロボ",
+      "Race": "synths",
+      "Wave": 6,
+      "HP": 504830272,
+      "Level": 62
+    },
+    {
+      "Name": "Deathclaw",
+      "nickname": "デス",
+      "Race": "animals",
+      "Wave": 7,
+      "HP": 504338656,
+      "Level": 62
+    },
+    {
+      "Name": "Mirelurk",
+      "nickname": "カニ",
+      "Race": "animals",
+      "Wave": 7,
+      "HP": 533282067,
+      "Level": 63
+    },
+    {
+      "Name": "Sentry bot",
+      "nickname": "ロボ",
+      "Race": "synths",
+      "Wave": 7,
+      "HP": 533788889,
+      "Level": 63
+    },
+    {
+      "Name": "Deathclaw",
+      "nickname": "デス",
+      "Race": "animals",
+      "Wave": 8,
+      "HP": 596579776,
+      "Level": 65
+    },
+    {
+      "Name": "Mirelurk",
+      "nickname": "カニ",
+      "Race": "animals",
+      "Wave": 8,
+      "HP": 596579776,
+      "Level": 65
+    },
+    {
+      "Name": "Courser",
+      "nickname": "ロボ",
+      "Race": "synths",
+      "Wave": 8,
+      "HP": 597108345,
+      "Level": 65
+    },
+    {
+      "Name": "Deathclaw",
+      "nickname": "デス",
+      "Race": "animals",
+      "Wave": 9,
+      "HP": 729798953,
+      "Level": 68
+    },
+    {
+      "Name": "Mirelurk",
+      "nickname": "カニ",
+      "Race": "animals",
+      "Wave": 9,
+      "HP": 729798953,
+      "Level": 68
+    },
+    {
+      "Name": "Courser",
+      "nickname": "ロボ",
+      "Race": "synths",
+      "Wave": 9,
+      "HP": 730386315,
+      "Level": 68
+    },
+    {
+      "Name": "Deathclaw",
+      "nickname": "デス",
+      "Race": "animals",
+      "Wave": 10,
+      "HP": 845904320,
+      "Level": 70
+    },
+    {
+      "Name": "Mirelurk",
+      "nickname": "カニ",
+      "Race": "animals",
+      "Wave": 10,
+      "HP": 845904320,
+      "Level": 70
+    },
+    {
+      "Name": "Courser",
+      "nickname": "ロボ",
+      "Race": "synths",
+      "Wave": 10,
+      "HP": 846518019,
+      "Level": 70
+    },
+    {
+      "Name": "Deathclaw",
+      "nickname": "デス",
+      "Race": "animals",
+      "Wave": 11,
+      "HP": 596579776,
+      "Level": 65
+    },
+    {
+      "Name": "Mirelurk",
+      "nickname": "カニ",
+      "Race": "animals",
+      "Wave": 11,
+      "HP": 596579776,
+      "Level": 65
+    },
+    {
+      "Name": "Courser",
+      "nickname": "ロボ",
+      "Race": "synths",
+      "Wave": 11,
+      "HP": 597108345,
+      "Level": 65
+    },
+    {
+      "Name": "Deathclaw",
+      "nickname": "デス",
+      "Race": "animals",
+      "Wave": 12,
+      "HP": 729798953,
+      "Level": 68
+    },
+    {
+      "Name": "Mirelurk",
+      "nickname": "カニ",
+      "Race": "animals",
+      "Wave": 12,
+      "HP": 729798953,
+      "Level": 68
+    },
+    {
+      "Name": "Courser",
+      "nickname": "ロボ",
+      "Race": "synths",
+      "Wave": 12,
+      "HP": 730386315,
+      "Level": 68
+    },
+    {
+      "Name": "Deathclaw",
+      "nickname": "デス",
+      "Race": "animals",
+      "Wave": 13,
+      "HP": 845904320,
+      "Level": 70
+    },
+    {
+      "Name": "Mirelurk",
+      "nickname": "カニ",
+      "Race": "animals",
+      "Wave": 13,
+      "HP": 845904320,
+      "Level": 70
+    },
+    {
+      "Name": "Courser",
+      "nickname": "ロボ",
+      "Race": "synths",
+      "Wave": 13,
+      "HP": 846518019,
+      "Level": 70
+    }
+  ]
+}
