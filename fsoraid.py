@@ -37,7 +37,10 @@ def command_show(args):
         if b is not None and len(b) > 0:
             item = b[0]
             print(f"Name:{item['Name']}")
-            print(f"Wave:{wave}({item['Wave']})")
+            if wave <= 13:
+              print(f"Wave:{wave}")
+            else:
+              print(f"Wave:{wave}({item['Wave']})")
             print(f"Level:{item['Level']}")
             print(f"HP:{'{:,}'.format(item['HP'])}")
         else:
@@ -68,7 +71,10 @@ def command_remain(args):
             hp = item['HP']
             minhp = item['HP'] * (parcent - 1) // 100
             maxhp = item['HP'] * parcent // 100
-            print(f"{item['Name']} Wave:{wave}({item['Wave']}) Lv:{item['Level']}")
+            if wave <= 13:
+              print(f"{item['Name']} Wave:{wave} Lv:{item['Level']}")
+            else:
+              print(f"{item['Name']} Wave:{wave}({item['Wave']}) Lv:{item['Level']}")
             print(f"Remaining HP:{'{:,}'.format(minhp)} ~ {'{:,}'.format(maxhp)} / {'{:,}'.format(item['HP'])} ({parcent}%)")
         else:
             print(f'unmatched by wave({w})')
