@@ -23,7 +23,10 @@ def command_show(args):
         if b is not None and len(b) > 0:
             item = b[0]
             print(f"Name:{item['Name']}")
-            print(f"Wave:{wave}({item['Wave']})")
+            if wave < 9:
+              print(f"Wave:{wave})"
+            else:
+              print(f"Wave:{wave}({item['Wave']})")
             print(f"Level:{item['Level']}")
             print(f"HP:{'{:,}'.format(item['HP'])}")
         else:
