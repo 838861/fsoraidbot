@@ -24,7 +24,7 @@ def command_show(args):
             item = b[0]
             print(f"Name:{item['Name']}")
             if wave <= 13:
-              print(f"Wave:{wave})")
+              print(f"Wave:{wave}")
             else:
               print(f"Wave:{wave}({item['Wave']})")
 
