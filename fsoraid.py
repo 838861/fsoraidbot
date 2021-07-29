@@ -22,27 +22,20 @@ def command_show(args):
         b = [boss for boss in result if boss['Wave'] == w]
         if b is not None and len(b) > 0:
             item = b[0]
-            print(f"Name:{item['Name']}")
-            if wave <= 13:
-              print(f"Wave:{wave}")
-            else:
-              print(f"Wave:{wave}({item['Wave']})")
-
-            print(f"Level:{item['Level']}")
-            print(f"HP:{'{:,}'.format(item['HP'])}")
+            print(f"""Name:{item['Name']}""")
+            print(f"""Wave:{wave}{f' ({item["Wave"]})' if 14 <= wave else ''}""")
+            print(f"""Level:{item['Level']}""")
+            print(f"""HP:{'{:,}'.format(item['HP'])}""")
         else:
             print('unmatched')
     else:
         b = [boss for boss in result if boss['Level'] == level]
         if b is not None and len(b) > 0:
             item = b[0]
-            print(f"Name:{item['Name']}")
-            if wave <= 13:
-              print(f"Wave:{wave}")
-            else:
-              print(f"Wave:{wave}({item['Wave']})")
-            print(f"Level:{item['Level']}")
-            print(f"HP:{'{:,}'.format(item['HP'])}")
+            print(f"""Name:{item['Name']}""")
+            print(f"""Wave:{wave}{f' ({item["Wave"]})' if 14 <= wave else ''}""")
+            print(f"""Level:{item['Level']}""")
+            print(f"""HP:{'{:,}'.format(item['HP'])}""")
         else:
             print('unmatched')
 
@@ -71,13 +64,10 @@ def command_remain(args):
             hp = item['HP']
             minhp = item['HP'] * (parcent - 1) // 100
             maxhp = item['HP'] * parcent // 100
-            if wave <= 13:
-              print(f"{item['Name']} Wave:{wave} Lv:{item['Level']}")
-            else:
-              print(f"{item['Name']} Wave:{wave}({item['Wave']}) Lv:{item['Level']}")
-            print(f"Remaining HP:{'{:,}'.format(minhp)} ~ {'{:,}'.format(maxhp)} / {'{:,}'.format(item['HP'])} ({parcent}%)")
+            print(f"""{item['Name']} Wave:{wave}{f" ({item['Wave']})" if 14 <= wave else ''} Lv:{item['Level']}""")
+            print(f"""Remaining HP:{'{:,}'.format(minhp)} ~ {'{:,}'.format(maxhp)} / {'{:,}'.format(item['HP'])} ({parcent}%)""")
         else:
-            print(f'unmatched by wave({w})')
+            print(f"""unmatched by wave({w})""")
     else:
         b = [boss for boss in result if boss['Level'] == level]
         if b is not None and len(b) > 0:
@@ -85,8 +75,8 @@ def command_remain(args):
             hp = item['HP']
             minhp = item['HP'] * (parcent - 1) // 100
             maxhp = item['HP'] * parcent // 100
-            print(f"{item['Name']} Lv:{item['Level']}")
-            print(f"Remaining HP:{'{:,}'.format(minhp)} ~ {'{:,}'.format(maxhp)} / {'{:,}'.format(item['HP'])} ({parcent}%)")
+            print(f"""{item['Name']} Lv:{item['Level']}""")
+            print(f"""Remaining HP:{'{:,}'.format(minhp)} ~ {'{:,}'.format(maxhp)} / {'{:,}'.format(item['HP'])} ({parcent}%)""")
         else:
             print('unmatched by level')
 
