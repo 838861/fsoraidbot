@@ -40,7 +40,42 @@ def command_show(args):
             print('unmatched')
 
 def command_attack(args):
-    print(args)
+    wave = args.wave
+    level = args.level
+    punch = args.punch
+    find_by_wave = True if args.level is None else False
+    w = wave if wave < 8 else 8 + (wave - 8) % 6
+
+    target = [t for t in [(args.deathclaw, 'デス'),(args.mirelurk, 'カニ'), (args.sentory, 'ロボ')] if t[0]]
+    with open('data_bosses.json', 'r') as f:
+        data = json.load(f)
+
+    result = [bosses for bosses in data['Bosses'] if bosses['nickname'] == target[0][1]]
+
+    if result is None:
+        print('unmatched by nickname')
+    elif find_by_wave:
+        b = [boss for boss in result if boss['Wave'] == w]
+        if b is not None and len(b) > 0:
+            item = b[0]
+            hp = item['HP']
+            damage_par_hp = (100 * punch) / hp
+
+            print(f"""{item['Name']} Wave:{wave}{f" ({item['Wave']})" if 14 <= wave else ''} Lv:{item['Level']}""")
+            print(f"""damage is {damage_par_hp}% of {hp}""")
+        else:
+            print(f"""unmatched by wave({w})""")
+    else:
+        b = [boss for boss in result if boss['Level'] == level]
+        if b is not None and len(b) > 0:
+            item = b[0]
+            hp = item['HP']
+            damage_par_hp = (100 * punch) / hp
+
+            print(f"""{item['Name']} Wave:{wave}{f" ({item['Wave']})" if 14 <= wave else ''} Lv:{item['Level']}""")
+            print(f"""damage is {damage_par_hp}% of {hp}""")
+        else:
+            print('unmatched by level')
 
 def command_remain(args):
     wave = args.wave
@@ -62,10 +97,10 @@ def command_remain(args):
         if b is not None and len(b) > 0:
             item = b[0]
             hp = item['HP']
-            minhp = item['HP'] * (parcent - 1) // 100
-            maxhp = item['HP'] * parcent // 100
+            minhp = hp * (parcent - 1) // 100
+            maxhp = hp * parcent // 100
             print(f"""{item['Name']} Wave:{wave}{f" ({item['Wave']})" if 14 <= wave else ''} Lv:{item['Level']}""")
-            print(f"""Remaining HP:{'{:,}'.format(minhp)} ~ {'{:,}'.format(maxhp)} / {'{:,}'.format(item['HP'])} ({parcent}%)""")
+            print(f"""Remaining HP:{minhp:,} ~ {maxhp:,} / {hp:,} ({parcent}%)""")
         else:
             print(f"""unmatched by wave({w})""")
     else:
@@ -73,10 +108,10 @@ def command_remain(args):
         if b is not None and len(b) > 0:
             item = b[0]
             hp = item['HP']
-            minhp = item['HP'] * (parcent - 1) // 100
-            maxhp = item['HP'] * parcent // 100
+            minhp = hp * (parcent - 1) // 100
+            maxhp = hp * parcent // 100
             print(f"""{item['Name']} Lv:{item['Level']}""")
-            print(f"""Remaining HP:{'{:,}'.format(minhp)} ~ {'{:,}'.format(maxhp)} / {'{:,}'.format(item['HP'])} ({parcent}%)""")
+            print(f"""Remaining HP:{minhp:,} ~ {maxhp:,} / {hp:,} ({parcent}%)""")
         else:
             print('unmatched by level')
 
