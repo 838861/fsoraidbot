@@ -62,7 +62,7 @@ def command_attack(args):
             damage_par_hp = (100 * punch) / hp
 
             print(f"""{item['Name']} Wave:{wave}{f" ({item['Wave']})" if 14 <= wave else ''} Lv:{item['Level']}""")
-            print(f"""damage is {damage_par_hp}% of {hp}""")
+            print(f"""damage is {damage_par_hp:2f}% of {hp}""")
         else:
             print(f"""unmatched by wave({w})""")
     else:
@@ -73,7 +73,7 @@ def command_attack(args):
             damage_par_hp = (100 * punch) / hp
 
             print(f"""{item['Name']} Wave:{wave}{f" ({item['Wave']})" if 14 <= wave else ''} Lv:{item['Level']}""")
-            print(f"""damage is {damage_par_hp}% of {hp}""")
+            print(f"""damage is {damage_par_hp:2f}% of {hp}""")
         else:
             print('unmatched by level')
 
