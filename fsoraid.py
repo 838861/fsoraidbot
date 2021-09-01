@@ -3,6 +3,9 @@
 
 import argparse
 import json
+import itertools
+import sys
+import math
 
 def command_show(args):
     wave = args.wave
@@ -115,6 +118,38 @@ def command_remain(args):
         else:
             print('unmatched by level')
 
+def command_total(args):
+    totaldamage = args.punch
+
+    with open('data_bosses.json', 'r') as f:
+        data = json.load(f)
+
+    result = [bosses for bosses in data['Bosses']]
+
+    if result is None:
+        print('unmatched by nickname')
+        sys.exit()
+
+    damage = 0
+    for wave in itertools.count(start=1, step=1):
+        w = wave if wave < 8 else 8 + (wave - 8) % 6
+        bb = [boss for boss in result if boss['Wave'] == w]
+        if bb is not None and len(bb) > 0:
+          for b in bb:
+              damage += b['HP']
+              hp = b['HP']
+              d = totaldamage - damage
+              if (d == 0):
+                  print(f"""Wave {b['Wave']}の{b['Name']}まで倒しました""")
+                  sys.exit()
+              elif(d < 0):
+                  damage_par_hp = 100 * (hp + d) / hp
+                  y = math.floor(damage_par_hp * 10 ** 2) / (10 ** 2)
+                  print(f"""Wave {b['Wave']}の{b['Name']}を{f"{y:.2f}" if d < hp else 100}%まで削りました""")
+                  sys.exit()
+        else:
+            print('unmatched by wave')
+
 def command_help(args):
     print(parser.parse_args([args.command, '--help']))
 
@@ -125,6 +160,7 @@ help_mirelurk = 'マイアラーククイーン'
 help_sentory = 'セントリーボット(or コーサー)'
 help_punch = 'このダメージで何回殴れば処せるのか'
 help_parcentage = '残りHPをパーセンテージで指定してね'
+help_total = '救援のトータルダメージを指定してね'
 
 parser = argparse.ArgumentParser(description='FSO raid helper tools')
 subparsers = parser.add_subparsers()
@@ -166,6 +202,10 @@ remain_cmd_paramset_target.add_argument('-s', '--sentory', action='store_true', 
 
 parser_remain.add_argument('-p', '--parcentage', type=int, default=1, help=help_parcentage)
 parser_remain.set_defaults(handler=command_remain)
+
+parser_total = subparsers.add_parser('total', help='see `total -h`')
+parser_total.add_argument('-p', '--punch', type=int, default=1, help=help_total)
+parser_total.set_defaults(handler=command_total)
 
 # help コマンドの parser を作成
 parser_help = subparsers.add_parser('help', help='see `help`')
