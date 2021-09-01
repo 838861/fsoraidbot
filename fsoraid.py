@@ -145,7 +145,7 @@ def command_total(args):
               elif(d < 0):
                   damage_par_hp = 100 * (hp + d) / hp
                   y = math.floor(damage_par_hp * 10 ** 2) / (10 ** 2)
-                  print(f"""Wave {b['Wave']}の{b['Name']}を{f"{y:.2f}" if d < hp else 100}%まで削りました""")
+                  print(f"""Wave {wave}の{b['Name']}を{f"{y:.2f}" if d < hp else 100}%まで削りました""")
                   sys.exit()
         else:
             print('unmatched by wave')
