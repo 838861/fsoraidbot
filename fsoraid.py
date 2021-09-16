@@ -11,7 +11,8 @@ def command_show(args):
     wave = args.wave
     level = args.level
     find_by_wave = True if args.level is None else False
-    w = wave if wave < 8 else 8 + (wave - 8) % 6
+#w = wave if wave < 8 else 8 + (wave - 8) % 6
+    w = min(wave,13)
 
     target = [t for t in [(args.deathclaw, 'デス'),(args.mirelurk, 'カニ'), (args.sentory, 'ロボ')] if t[0]]
     with open('data_bosses.json', 'r') as f:
@@ -47,7 +48,8 @@ def command_attack(args):
     level = args.level
     punch = args.punch
     find_by_wave = True if args.level is None else False
-    w = wave if wave < 8 else 8 + (wave - 8) % 6
+#w = wave if wave < 8 else 8 + (wave - 8) % 6
+    w = min(wave,13)
 
     target = [t for t in [(args.deathclaw, 'デス'),(args.mirelurk, 'カニ'), (args.sentory, 'ロボ')] if t[0]]
     with open('data_bosses.json', 'r') as f:
@@ -85,7 +87,8 @@ def command_remain(args):
     level = args.level
     parcent = args.parcentage
     find_by_wave = True if args.level is None else False
-    w = wave if wave < 8 else 8 + (wave - 8) % 6
+#w = wave if wave < 8 else 8 + (wave - 8) % 6
+    w = min(wave,13)
 
     target = [t for t in [(args.deathclaw, 'デス'),(args.mirelurk, 'カニ'), (args.sentory, 'ロボ')] if t[0]]
     with open('data_bosses.json', 'r') as f:
@@ -132,7 +135,8 @@ def command_total(args):
 
     damage = 0
     for wave in itertools.count(start=1, step=1):
-        w = wave if wave < 8 else 8 + (wave - 8) % 6
+#w = wave if wave < 8 else 8 + (wave - 8) % 6
+        w = min(wave,13)
         bb = [boss for boss in result if boss['Wave'] == w]
         if bb is not None and len(bb) > 0:
           for b in bb:
